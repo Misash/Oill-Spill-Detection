@@ -2,6 +2,7 @@ import os
 import cv2
 import numpy as np
 import tensorflow as tf
+import matplotlib.pyplot as plt
 from tensorflow.keras.models import Model
 from tensorflow.keras.layers import Input, Conv2D, MaxPooling2D, UpSampling2D, concatenate
 # from sklearn.model_selection import train_test_split
@@ -24,6 +25,10 @@ mask_folder = os.path.join(data_folder, "train_masks_256")
 
 # Obtener lista de nombres de archivo para las imágenes
 image_files = os.listdir(image_folder)
+
+# image_files = os.listdir(image_folder)
+# half_length = len(image_files) // 2
+# image_files = image_files[:half_length]
 
 
 # Paso 2: Preparar los datos
@@ -56,6 +61,7 @@ for filename in image_files:
     masks.append(mask)
 
 
+
 # Convertir las listas de imágenes y máscaras a arreglos numpy
 images = np.array(images)
 masks = np.array(masks)
@@ -63,6 +69,8 @@ masks = np.array(masks)
 # Agregar una dimensión adicional para el canal (ya que las imágenes están en escala de grises)
 images = np.expand_dims(images, axis=-1)
 masks = np.expand_dims(masks, axis=-1)
+
+
 
 
 
@@ -121,6 +129,7 @@ def unet(input_size=(256, 256, 1)):
 
     return model
 
+
 # Paso 4: Compilar y entrenar el modelo
 model = unet(input_size=image_size + (1,))
 model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
@@ -139,10 +148,22 @@ test_image = np.expand_dims(test_image, axis=-1)
 
 predicted_mask = model.predict(test_image)
 
+# Mostrar la imagen testeada
+plt.imshow(test_image[0, :, :, 0], cmap='gray')
+plt.title('Imagen testeada')
+plt.axis('off')
+plt.show()
 
 
+# Mostrar la máscara predicha
+predicted_mask = predicted_mask.squeeze()
+plt.imshow(predicted_mask, cmap='gray')
+plt.title('Máscara predicha')
+plt.axis('off')
+plt.show()
 
-##################################### SVM ##################################33
+
+##################################### SVM ##################################
 
 # filename = "041871.000163.tif"
 # image_path = os.path.join(image_folder, filename)
