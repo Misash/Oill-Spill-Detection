@@ -193,7 +193,7 @@ def init_image(input_path, output_path, model_path):
                     part = part[:,:cols]
 
             # mask images
-            mask.GetRasterBand(3).WriteArray(part, r*PIXEL_SIZE, c*PIXEL_SIZE)
+            mask.GetRasterBand(1).WriteArray(part, r*PIXEL_SIZE, c*PIXEL_SIZE)
  
             #increment count
             bar.update(ind)
