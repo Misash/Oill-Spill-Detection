@@ -48,5 +48,7 @@ Note: The notebook is commented to guide you through each step of the process.
 Models are rigorously evaluated using F1-Score metrics, ensuring high accuracy and reliability in hydrocarbon detection.
 
 
-![image](https://github.com/Misash/Oill-Spill-Detection/assets/70419764/bf53623c-cd9e-4280-84fd-cb44d19b4f03)
-![image](https://github.com/Misash/Oill-Spill-Detection/assets/70419764/2175ed1a-2f5b-4453-8285-cfe4fa52bfb3)
+<p align="center">
+  <img src="https://github.com/Misash/Oill-Spill-Detection/assets/70419764/bf53623c-cd9e-4280-84fd-cb44d19b4f03" width="350" height="300"/>
+  <img src="https://github.com/Misash/Oill-Spill-Detection/assets/70419764/ba68a115-0671-42da-811b-a7d078199deb" width="350" height="300"/>
+</p>
