@@ -1,19 +1,6 @@
-# Requisitos para el proyecto
-
-# Biblioteca de GDAL para trabajar con datos geoespaciales
 gdal
-
-# Biblioteca NumPy para manipulación de matrices y cálculos matemáticos
 numpy
-
-# Biblioteca estándar de Python
 tempfile2
-
-# Biblioteca de TensorFlow para el aprendizaje automático y la inteligencia artificial
 tensorflow
-
-# Biblioteca argparse para analizar argumentos de línea de comandos
 argparse
-
-# Biblioteca progressbar para mostrar barras de progreso
 progressbar2
